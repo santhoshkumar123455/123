@@ -22,11 +22,11 @@ with open('french_dictionary.csv', mode='r') as data:
     dict_from_csv = {rows[0]: rows[1] for rows in reader}
     print(dict_from_csv)
     
-tot_eng = []
+total_eng = []
 for word in match_pattern:
     if word in find_words_inlist:
-        tot_eng.append(word)
-eng = set(tot_eng)
+        total_eng.append(word)
+eng = set(total_eng)
 eng = list(eng)
 
 
@@ -37,7 +37,7 @@ for x in eng:
             french.append(value)
             
 frequency = {}
-for y in tot_eng:
+for y in total_eng:
     count = frequency.get(y, 0)
     frequency[y] = count + 1
 
@@ -74,7 +74,7 @@ for wrd in temp:
 
 res = ' '.join(res)
 
-f = open("t8.shakespeare.translated.txt", "w")
+f = open("t8.shakespeare.trans.txt", "w")
 f.write(str(res))
 f.close()
 
